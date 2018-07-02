@@ -1,8 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <!-- The asterisk '*' will be replaced by the build system -->
+   <PropertyGroup>
+      <VersionPrefix>0.1.0</VersionPrefix>
+      <VersionSuffix>test</VersionSuffix>
+  </PropertyGroup>
+
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <DebugType>portable</DebugType>
+    <AssemblyName>vsts-gitops-cli</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -11,6 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.CommandLineUtils" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0" />
   </ItemGroup>
 
 </Project>

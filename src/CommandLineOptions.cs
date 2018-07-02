@@ -13,19 +13,12 @@ namespace VSTSGitOps
 
             var app = new CommandLineApplication
             {
-                Name = "vsts-gitops",
+                Name = "vsts-gitops-cli",
                 FullName = "VSTS GitOps command line utility"
             };
 
+            // Register main app help
             app.HelpOption("-?|-h|--help");
-
-
-
-            var enthousiasticSwitch = app.Option("-e|--enthousiastically",
-                                          "Whether the app should be enthousiastic.",
-                                          CommandOptionType.NoValue);
-
-
 
             RootCommandConfiguration.Configure(app, options);
 
@@ -36,13 +29,10 @@ namespace VSTSGitOps
                 return null;
             }
 
-            options.IsEnthousiastic = enthousiasticSwitch.HasValue();
-
             return options;
         }
 
         public ICommand Command { get; set; }
-        public bool IsEnthousiastic { get; set; }
 
     }
 

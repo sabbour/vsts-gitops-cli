@@ -10,8 +10,8 @@ namespace VSTSGitOps.CommandConfiguration
     {
         public static void Configure(CommandLineApplication app, CommandLineOptions options)
         {
-
-            //app.Command("greet", c => GreetCommandConfiguration.Configure(c, options));
+            // Register application commands
+            app.Command("version", c => VersionCommandConfiguration.Configure(c, options));
 
             app.OnExecute(() =>
             {
