@@ -15,7 +15,7 @@ namespace VSTSGitOps.Commands
         {
             _app.ShowHelp();
 
-            return 1;
+            return 0;
         }
 
     }
