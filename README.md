@@ -31,5 +31,5 @@ cd bin/release/netcoreapp2.0/<runtime>/publish/
 Then run
 
 ```sh
-./vsts-gitops
+./vsts-gitops version
 ```
