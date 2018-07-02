@@ -33,3 +33,11 @@ Then run
 ```sh
 ./vsts-gitops version
 ```
+
+## Downloading
+
+The latest built versions (from development branch) are available at:
+
+- **Windows:** [https://aka.ms/vsts-gitops-win-dev](https://aka.ms/vsts-gitops-win-dev)
+- **Mac OS:** [https://aka.ms/vsts-gitops-osx-dev](https://aka.ms/vsts-gitops-osx-dev)
+- **Debian:** [https://aka.ms/vsts-gitops-debian-dev](https://aka.ms/vsts-gitops-debian-dev)

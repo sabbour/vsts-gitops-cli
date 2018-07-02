@@ -11,7 +11,7 @@ namespace VSTSGitOps.CommandConfiguration
         public static void Configure(CommandLineApplication app, CommandLineOptions options)
         {
             // Register application commands
-            app.Command("version", c => VersionCommandConfiguration.Configure(c, options));
+            app.Command("generate-build-number", c => GenerateBuildNumberCommandConfiguration.Configure(c, options));
 
             app.OnExecute(() =>
             {
