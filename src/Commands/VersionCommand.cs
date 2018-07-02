@@ -1,13 +1,13 @@
 using System;
+using System.Reflection;
 using Microsoft.Extensions.CommandLineUtils;
-using Microsoft.Extensions.PlatformAbstractions;
 
 namespace VSTSGitOps.Commands
 {
     public class VersionCommand : ICommand
     {
         private readonly CommandLineApplication _command;
-        
+
         public VersionCommand(CommandLineApplication command)
         {
             _command = command;
@@ -15,7 +15,11 @@ namespace VSTSGitOps.Commands
 
         public int Run()
         {
-            Console.WriteLine($"version: {PlatformServices.Default.Application.ApplicationVersion}");
+
+            var assemblyVersion = System.Reflection.Assembly.GetEntryAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
+            var assemblyName = System.Reflection.Assembly.GetEntryAssembly().GetName().Name;
+
+            Console.WriteLine($"{assemblyName}-{assemblyVersion}");
             return 0;
         }
     }
