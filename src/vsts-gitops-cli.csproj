@@ -3,7 +3,7 @@
   <!-- The asterisk '*' will be replaced by the build system -->
    <PropertyGroup>
       <VersionPrefix>0.1.0</VersionPrefix>
-      <VersionSuffix>test</VersionSuffix>
+      <VersionSuffix>*</VersionSuffix>
   </PropertyGroup>
 
   <PropertyGroup>
