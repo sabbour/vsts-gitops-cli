@@ -47,5 +47,7 @@ The latest built versions (from development branch) are available at:
 - On a Hosted Linux Agent, create a Bash task with the following inline script
 
   ```sh
-  curl -Lo install-vsts-gitops.sh https://aka.ms/install-vsts-gitops-debian-dev && chmod +x install-vsts-gitops.sh && ./install-vsts-gitops.sh
+  curl -Lo install-vsts-gitops.sh https://aka.ms/install-vsts-gitops-debian \
+  && chmod +x install-vsts-gitops.sh \
+  && ./install-vsts-gitops.sh
   ```
