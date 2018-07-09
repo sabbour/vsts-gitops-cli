@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.Services.Common;
 using Microsoft.VisualStudio.Services.WebApi;
 using Microsoft.TeamFoundation.SourceControl.WebApi;
 
-using VSTSGitOps.Commands.Interfaces;
+using VSTSGitOps.Commands;
 
 namespace VSTSGitOps.Commands
 {
