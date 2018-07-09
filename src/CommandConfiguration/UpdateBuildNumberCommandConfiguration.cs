@@ -18,7 +18,7 @@ namespace VSTSGitOps.CommandConfiguration
             var buildReasonOption = command.Option("--buildReason", "Reason for the build. If empty will check $BUILD_REASON", CommandOptionType.SingleValue);
             var sourceBranchNameOption = command.Option("--sourceBranchName", "Source branch name. Usually passed from $BUILD_SOURCEBRANCHNAME", CommandOptionType.SingleValue);
             var gitCommitIdOption = command.Option("--gitCommitId", "Git commit ID. Usually passed from $BUILD_SOURCEVERSION", CommandOptionType.SingleValue);
-            var buildIdOption = command.Option("--buildId", "Build ID. Usually passed from $BUILD_ID", CommandOptionType.SingleValue);
+            var buildIdOption = command.Option("--buildId", "Build ID. Usually passed from $BUILD_BUILDID", CommandOptionType.SingleValue);
             var prNumberOption = command.Option("--prNumber", "(Optional) Pull Request number. Usually passed from $SYSTEM_PULLREQUEST_PULLREQUESTNUMBER", CommandOptionType.SingleValue);
 
       
@@ -29,7 +29,7 @@ namespace VSTSGitOps.CommandConfiguration
                     var buildReason = ArgumentParseUtil.GetArgument<string>(buildReasonOption, "BUILD_REASON");
                     var sourceBranch = ArgumentParseUtil.GetArgument<string>(sourceBranchNameOption, "BUILD_SOURCEBRANCHNAME");
                     var gitCommitId = ArgumentParseUtil.GetArgument<string>(gitCommitIdOption, "BUILD_SOURCEVERSION");
-                    var buildId = ArgumentParseUtil.GetArgument<string>(buildIdOption, "BUILD_ID");
+                    var buildId = ArgumentParseUtil.GetArgument<string>(buildIdOption, "BUILD_BUILDID");
                     var prNumber = ArgumentParseUtil.GetArgument<string>(prNumberOption, "SYSTEM_PULLREQUEST_PULLREQUESTNUMBER", required: false);
 
 

@@ -10,7 +10,7 @@ namespace VSTSGitOps.Commands.Implementation.Generic
         private readonly string _buildReason; // $BUILD_REASON
         private readonly string _sourceBranchName; // $BUILD_SOURCEBRANCHNAME
         private readonly string _gitCommitId; // $BUILD_SOURCEVERSION
-        private readonly string _buildId; // $BUILD_ID
+        private readonly string _buildId; // $BUILD_BUILDID
         private readonly string _prNumber;// $SYSTEM_PULLREQUEST_PULLREQUESTNUMBER
         private readonly CommandLineOptions _options;
 
