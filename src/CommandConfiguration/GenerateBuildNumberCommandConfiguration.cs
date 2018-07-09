@@ -18,7 +18,7 @@ namespace VSTSGitOps.CommandConfiguration
             var buildReasonOption = command.Option("--buildReason", "Reason for the build. If empty will check $BUILD_REASON", CommandOptionType.SingleValue);
             var sourceBranchNameOption = command.Option("--sourceBranchName", "Source branch name. Usually passed from $BUILD_SOURCEBRANCHNAME", CommandOptionType.SingleValue);
             var gitCommitIdOption = command.Option("--gitCommitId", "Git commit ID. Usually passed from $BUILD_SOURCEVERSION", CommandOptionType.SingleValue);
-            var buildIdOption = command.Option("--buildId", "Build ID. Usually passed from $BUILD_ID", CommandOptionType.SingleValue);
+            var buildIdOption = command.Option("--buildId", "Build ID. Usually passed from $BUILD_BUILDIDz", CommandOptionType.SingleValue);
             var prNumberOption = command.Option("--prNumber", "(Optional) Pull Request number. Usually passed from $SYSTEM_PULLREQUEST_PULLREQUESTNUMBER", CommandOptionType.SingleValue);
 
             command.OnExecute(() =>
