@@ -26,6 +26,9 @@ namespace VSTSGitOps.CommandConfiguration
             {
                 try
                 {
+                    if(options.Debug)
+                        Program.PrintEnv();
+
                     var buildReason = ArgumentParseUtil.GetArgument<string>(buildReasonOption, "BUILD_REASON");
                     var sourceBranch = ArgumentParseUtil.GetArgument<string>(sourceBranchNameOption, "BUILD_SOURCEBRANCHNAME");
                     var gitCommitId = ArgumentParseUtil.GetArgument<string>(gitCommitIdOption, "BUILD_SOURCEVERSION");

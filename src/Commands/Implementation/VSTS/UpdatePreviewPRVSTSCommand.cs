@@ -62,9 +62,6 @@ namespace VSTSGitOps.Commands.Implementation.VSTS
         
         public int Run()
         {
-            if(_options.Debug)
-                Program.PrintEnv();
-                
             return UpdatePreviewPR(_buildNumber,_prNumber).Result;
         }
 

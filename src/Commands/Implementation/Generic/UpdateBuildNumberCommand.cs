@@ -32,9 +32,6 @@ namespace VSTSGitOps.Commands.Implementation.Generic
 
         public int Run()
         {
-            if(_options.Debug)
-                Program.PrintEnv();
-
             string buildTag;
 
             // Shorten the commit SHA if it is longer than 7 characters
