@@ -27,9 +27,6 @@ namespace VSTSGitOps.CommandConfiguration
             {
                 try
                 {
-                    if(options.Debug)
-                        Program.PrintEnv();
-
                     Uri accountUri = ArgumentParseUtil.GetArgument<Uri>(accountUriOption, "SYSTEM_TEAMFOUNDATIONCOLLECTIONURI");
                     var personalAccessToken = ArgumentParseUtil.GetArgument<string>(personalAccessTokenOption, "ENV_PERSONALACCESSTOKEN");
                     var projectName = ArgumentParseUtil.GetArgument<string>(projectNameOption, "SYSTEM_TEAMPROJECT");

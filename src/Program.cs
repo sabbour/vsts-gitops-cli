@@ -7,10 +7,11 @@ namespace VSTSGitOps
     {
         static int Main(string[] args)
         {
+            PrintEnv();
+            
             var options = CommandLineOptions.Parse(args);
             if (options?.Command == null)
             {
-
                 // RootCommand will have printed help
                 return 1;
             }
