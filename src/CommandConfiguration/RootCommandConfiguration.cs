@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Collections.Generic;
 using System.Text;
 using VSTSGitOps.Commands;
+using VSTSGitOps.Commands.Implementation.Generic;
 using Microsoft.Extensions.CommandLineUtils;
 
 namespace VSTSGitOps.CommandConfiguration
@@ -17,6 +18,7 @@ namespace VSTSGitOps.CommandConfiguration
             // Register application commands
             app.Command("generate-build-number", c => GenerateBuildNumberCommandConfiguration.Configure(c, options));
             app.Command("update-build-number", c => UpdateBuildNumberCommandConfiguration.Configure(c, options));
+            app.Command("update-pullrequest-preview-vsts", c => UpdatePreviewPRVSTSCommandConfiguration.Configure(c, options));
 
             app.OnExecute(() =>
             {

@@ -1,6 +1,6 @@
 using Microsoft.Extensions.CommandLineUtils;
 
-namespace VSTSGitOps.Commands
+namespace VSTSGitOps.Commands.Implementation.Generic
 {
     public class RootCommand : ICommand
     {
