@@ -41,3 +41,11 @@ The latest built versions (from development branch) are available at:
 - **Windows:** [https://aka.ms/vsts-gitops-win-dev](https://aka.ms/vsts-gitops-win-dev)
 - **Mac OS:** [https://aka.ms/vsts-gitops-osx-dev](https://aka.ms/vsts-gitops-osx-dev)
 - **Debian:** [https://aka.ms/vsts-gitops-debian-dev](https://aka.ms/vsts-gitops-debian-dev)
+
+# Using the task
+
+- On a Hosted Linux Agent, create a Bash task with the following inline script
+
+  ```sh
+  curl -Lo install-vsts-gitops.sh https://aka.ms/install-vsts-gitops-debian-dev && chmod +x install-vsts-gitops.sh && ./install-vsts-gitops.sh
+  ```
