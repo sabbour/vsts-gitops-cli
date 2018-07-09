@@ -31,7 +31,7 @@ namespace VSTSGitOps.CommandConfiguration
                     var personalAccessToken = ArgumentParseUtil.GetArgument<string>(personalAccessTokenOption, "ENV_PERSONALACCESSTOKEN");
                     var projectName = ArgumentParseUtil.GetArgument<string>(projectNameOption, "SYSTEM_TEAMPROJECT");
                     var repoName = ArgumentParseUtil.GetArgument<string>(repoNameOption, "BUILD_REPOSITORY_NAME");
-                    var buildNumber = ArgumentParseUtil.GetArgument<string>(buildNumberOption, "BUILD_NUMBER");
+                    var buildNumber = ArgumentParseUtil.GetArgument<string>(buildNumberOption, "BUILD_BUILDID");
                     var prNumber = ArgumentParseUtil.GetArgument<string>(prNumberOption, "SYSTEM_PULLREQUEST_PULLREQUESTNUMBER");
 
                     options.Command = new UpdatePreviewPRVSTSCommand(

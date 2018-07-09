@@ -28,7 +28,7 @@ namespace VSTSGitOps.CommandConfiguration
                     var buildReason = ArgumentParseUtil.GetArgument<string>(buildReasonOption, "BUILD_REASON");
                     var sourceBranch = ArgumentParseUtil.GetArgument<string>(sourceBranchNameOption, "BUILD_SOURCEBRANCHNAME");
                     var gitCommitId = ArgumentParseUtil.GetArgument<string>(gitCommitIdOption, "BUILD_SOURCEVERSION");
-                    var buildId = ArgumentParseUtil.GetArgument<string>(buildIdOption, "BUILD_ID");
+                    var buildId = ArgumentParseUtil.GetArgument<string>(buildIdOption, "BUILD_BUILDID");
                     var prNumber = ArgumentParseUtil.GetArgument<string>(prNumberOption, "SYSTEM_PULLREQUEST_PULLREQUESTNUMBER", required: false);
 
 
