@@ -8,6 +8,7 @@ namespace VSTSGitOps
 
     public class CommandLineOptions
     {
+        public bool Debug { get; set; }
         public static CommandLineOptions Parse(string[] args)
         {
             var options = new CommandLineOptions();
@@ -19,7 +20,11 @@ namespace VSTSGitOps
 
             // Register main app help
             app.HelpOption("-?|-h|--help");
-            
+
+            var debugSwitch = app.Option("-d|--debug",
+                                          "Print environment variables",
+                                          CommandOptionType.NoValue);
+
             RootCommandConfiguration.Configure(app, options);
 
             var result = app.Execute(args);
@@ -28,6 +33,8 @@ namespace VSTSGitOps
             {
                 return null;
             }
+
+            options.Debug = true;//debugSwitch.HasValue();
 
             return options;
         }

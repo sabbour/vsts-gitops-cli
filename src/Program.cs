@@ -16,5 +16,13 @@ namespace VSTSGitOps
             }
             return options.Command.Run();
         }
+
+        public static void PrintEnv() {
+            var envVariables = System.Environment.GetEnvironmentVariables();
+            foreach (System.Collections.DictionaryEntry env in envVariables)
+            {
+                Console.WriteLine($"{env.Key}: {env.Value}");
+            }
+        }
     }
 }
