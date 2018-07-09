@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using VSTSGitOps.Commands;
 using VSTSGitOps.Utils;
-using VSTSGitOps.Commands.Implementation.Generic;
 using Microsoft.Extensions.CommandLineUtils;
 
 namespace VSTSGitOps.CommandConfiguration
@@ -19,7 +18,7 @@ namespace VSTSGitOps.CommandConfiguration
             var sourceBranchNameOption = command.Option("--sourceBranchName", "Source branch name. Usually passed from $BUILD_SOURCEBRANCHNAME", CommandOptionType.SingleValue);
             var gitCommitIdOption = command.Option("--gitCommitId", "Git commit ID. Usually passed from $BUILD_SOURCEVERSION", CommandOptionType.SingleValue);
             var buildIdOption = command.Option("--buildId", "Build ID. Usually passed from $BUILD_BUILDID", CommandOptionType.SingleValue);
-            var prNumberOption = command.Option("--prNumber", "(Optional) Pull Request number. Usually passed from $SYSTEM_PULLREQUEST_PULLREQUESTNUMBER", CommandOptionType.SingleValue);
+            var prNumberOption = command.Option("--prNumber", "(Optional) Pull Request number. Usually passed from $SYSTEM_PULLREQUEST_PULLREQUESTID", CommandOptionType.SingleValue);
 
       
             command.OnExecute(() =>
@@ -30,7 +29,7 @@ namespace VSTSGitOps.CommandConfiguration
                     var sourceBranch = ArgumentParseUtil.GetArgument<string>(sourceBranchNameOption, "BUILD_SOURCEBRANCHNAME");
                     var gitCommitId = ArgumentParseUtil.GetArgument<string>(gitCommitIdOption, "BUILD_SOURCEVERSION");
                     var buildId = ArgumentParseUtil.GetArgument<string>(buildIdOption, "BUILD_BUILDID");
-                    var prNumber = ArgumentParseUtil.GetArgument<string>(prNumberOption, "SYSTEM_PULLREQUEST_PULLREQUESTNUMBER", required: false);
+                    var prNumber = ArgumentParseUtil.GetArgument<string>(prNumberOption, "SYSTEM_PULLREQUEST_PULLREQUESTID", required: false);
 
 
                     options.Command = new UpdateBuildNumberCommand(

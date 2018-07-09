@@ -1,10 +1,10 @@
 using System;
 using Microsoft.Extensions.CommandLineUtils;
 
-namespace VSTSGitOps.Commands.Implementation.Generic
+namespace VSTSGitOps.Commands
 {
 
-    public class GenerateBuildNumberCommand : ICommand
+    public class UpdateBuildNumberCommand : ICommand
     {
 
         private readonly string _buildReason; // $BUILD_REASON
@@ -14,7 +14,7 @@ namespace VSTSGitOps.Commands.Implementation.Generic
         private readonly string _prNumber;// $SYSTEM_PULLREQUEST_PULLREQUESTNUMBER
         private readonly CommandLineOptions _options;
 
-        public GenerateBuildNumberCommand(
+        public UpdateBuildNumberCommand(
             string buildReason,
             string sourceBranchName,
             string gitCommitId,
@@ -47,7 +47,7 @@ namespace VSTSGitOps.Commands.Implementation.Generic
                 buildTag = $"{_sourceBranchName}-{commitId}-{_buildId}";
             }
 
-            Console.WriteLine(buildTag.ToLower());
+            Console.WriteLine("##vso[build.updatebuildnumber]"+buildTag.ToLower());
 
             return 0;
         }

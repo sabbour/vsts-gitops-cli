@@ -7,10 +7,10 @@ using Microsoft.TeamFoundation.SourceControl.WebApi;
 
 using VSTSGitOps.Commands.Interfaces;
 
-namespace VSTSGitOps.Commands.Implementation.VSTS
+namespace VSTSGitOps.Commands
 {
 
-    public class UpdatePreviewPRVSTSCommand : IUpdatePreviewPRCommand
+    public class UpdatePreviewPRCommand : ICommand
     {
         private readonly Uri _accountUri; // Account URL, for example: https://fabrikam.visualstudio.com
         private readonly string _personalAccessToken; // https://docs.microsoft.com/en-us/vsts/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts
@@ -22,7 +22,7 @@ namespace VSTSGitOps.Commands.Implementation.VSTS
 
         private readonly CommandLineOptions _options;
 
-        public UpdatePreviewPRVSTSCommand(string buildNumber, string prNumber, string repoName, Uri accountUri, string projectName, string personalAccessToken, CommandLineOptions options)
+        public UpdatePreviewPRCommand(string buildNumber, string prNumber, string repoName, Uri accountUri, string projectName, string personalAccessToken, CommandLineOptions options)
         {
             _buildNumber = buildNumber;
             _prNumber = prNumber;

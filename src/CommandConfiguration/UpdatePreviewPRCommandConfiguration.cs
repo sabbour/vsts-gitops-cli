@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using VSTSGitOps.Commands;
-using VSTSGitOps.Commands.Implementation.Generic;
-using VSTSGitOps.Commands.Implementation.VSTS;
 using Microsoft.Extensions.CommandLineUtils;
 using VSTSGitOps.Utils;
 
 namespace VSTSGitOps.CommandConfiguration
 {
-    public static class UpdatePreviewPRVSTSCommandConfiguration
+    public static class UpdatePreviewPRCommandConfiguration
     {
         public static void Configure(CommandLineApplication command, CommandLineOptions options)
         {
@@ -34,7 +32,7 @@ namespace VSTSGitOps.CommandConfiguration
                     var buildNumber = ArgumentParseUtil.GetArgument<string>(buildNumberOption, "BUILD_BUILDID");
                     var prNumber = ArgumentParseUtil.GetArgument<string>(prNumberOption, "SYSTEM_PULLREQUEST_PULLREQUESTNUMBER");
 
-                    options.Command = new UpdatePreviewPRVSTSCommand(
+                    options.Command = new UpdatePreviewPRCommand(
                         buildNumber,
                         prNumber,
                         repoName,
